@@ -117,7 +117,7 @@ private extension HomeViewController {
         
         homeView.rx.notificationButtonTapped
             .subscribe(onNext: {
-                let vc = NotificationViewController()
+                let vc = NotificationViewController(viewModel: NotificationViewModel()) // TODO: - VM에서 id 기반 알림들 불러오는 로직 짤 지 정해야함
                 self.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)
